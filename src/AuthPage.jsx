@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const AuthPage = (props) => {
-    const onSubmit = (e) => {
-        e.preventDefault();
-        const { value } = e.target[0];
-        axios.post(
-            'https://swiftchat-ten.vercel.app/authenticate',
-            { username: value }
-        )
-        props.onAuth({ username: value, secret: value })
-    }
+// const AuthPage = (props) => {
+//     const onSubmit = (e) => {
+//         e.preventDefault();
+//         const { value } = e.target[0];
+//         axios.post(
+//             'https://swiftchat-ten.vercel.app/authenticate',
+//             { username: value }
+//         )
+//         props.onAuth({ username: value, secret: value })
+//     }
 
     return (
         <div className="background">
