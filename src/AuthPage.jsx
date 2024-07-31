@@ -5,7 +5,7 @@ const AuthPage = (props) => {
         e.preventDefault();
         const { value } = e.target[0];
         axios.post(
-            'https://swiftchat-ten.vercel.app/authenticate',
+            'https://swiftchat-ten.vercel.app',
             { username: value }
         )
         .then(response => {
