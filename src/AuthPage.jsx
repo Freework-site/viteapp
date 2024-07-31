@@ -1,15 +1,20 @@
 import axios from "axios";
 
-// const AuthPage = (props) => {
-//     const onSubmit = (e) => {
-//         e.preventDefault();
-//         const { value } = e.target[0];
-//         axios.post(
-//             'https://swiftchat-ten.vercel.app/authenticate',
-//             { username: value }
-//         )
-//         props.onAuth({ username: value, secret: value })
-//     }
+const AuthPage = (props) => {
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const { value } = e.target[0];
+        axios.post(
+            'https://swiftchat-ten.vercel.app/authenticate',
+            { username: value }
+        )
+        .then(response => {
+            props.onAuth({ username: value, secret: value });
+        })
+        .catch(error => {
+            console.error("There was an error!", error);
+        });
+    }
 
     return (
         <div className="background">
@@ -30,6 +35,6 @@ import axios from "axios";
             </form>
         </div>
     );
-// }
+}
 
-export default AuthPage
+export default AuthPage;
