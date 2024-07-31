@@ -30,6 +30,6 @@ import axios from "axios";
             </form>
         </div>
     );
-}
+// }
 
 export default AuthPage
