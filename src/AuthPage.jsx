@@ -5,15 +5,10 @@ const AuthPage = (props) => {
         e.preventDefault();
         const { value } = e.target[0];
         axios.post(
-            'https://swiftchat-ten.vercel.app',
+            'http://localhost:3001/authenticate',
             { username: value }
         )
-        .then(response => {
-            props.onAuth({ username: value, secret: value });
-        })
-        .catch(error => {
-            console.error("There was an error!", error);
-        });
+        props.onAuth({ username: value, secret: value })
     }
 
     return (
@@ -37,4 +32,4 @@ const AuthPage = (props) => {
     );
 }
 
-export default AuthPage;
+export default AuthPage
